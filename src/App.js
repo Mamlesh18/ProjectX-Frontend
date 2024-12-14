@@ -1,12 +1,23 @@
 import React from "react";
-import UserDashboard from "./components/UserDashboard";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import UserDashboard from "./components/student/UserDashboard";
+import ProjectList from "./components/client/ProjectList";
+import ProjectUpload from "./components/client/Projectupload";
+import LoginPage from "./components/auth/Loginpage";
 function App() {
   return (
-    <div>
-      <UserDashboard />
-    <h1> hello</h1>
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<UserDashboard />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/project" element={<ProjectList />} />
+          <Route path="/pro" element={<ProjectUpload />} />
+
+        </Routes>
+      </div>
+    </Router>
+
   );
 }
 
