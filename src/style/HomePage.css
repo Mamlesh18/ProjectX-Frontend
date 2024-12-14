@@ -1,0 +1,125 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+   
+
+  }
+  
+  /* Container covers the full page */
+  /* .page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    width: 100%;
+    background: linear-gradient(to right, #4caf50, #a8d5ba); 
+    font-family: Arial, sans-serif;
+    margin: 0; 
+    padding: 0; 
+  } */
+
+  .page-container {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to right, #b8d6e4, #FFF9E6); /* Gradient background */
+    display: flex;
+    flex-direction: row;  /* Ensures the left and right side containers are in a row */
+    justify-content: space-between; /* Distribute space evenly between them */
+    align-items: center; /* Vertically center the content */
+    padding: 0 5%; 
+    overflow: hidden; 
+   
+}
+
+/* .page-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+} */
+  
+ 
+
+  .left-side, .right-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+  
+
+
+  /* Button styling for Student */
+  
+  /* Button hover effect */
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  .student-btn, .upload-btn {
+    padding: 20px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #3e76b6;
+    color: white;
+    max-width: 250px; /* Set max-width to prevent stretching */
+    text-align: center; /* Ensures text is centered */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px; /* Set max-width to prevent stretching */
+    height: auto; /* Let the height auto adjust based on content */
+        
+
+  }
+  
+  .student-btn:hover, .upload-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .fa {
+    font-size: 1.5em;
+    margin-right: 10px; /* Adds spacing between the icon and text */
+  }
+
+  .student-btn {
+    left: 20%; /* Position button in the left half */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Fine-tune vertical centering */
+  }
+  
+  .upload-btn {
+    right: 20%; /* Position button in the right half */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Fine-tune vertical centering */
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #b7dded;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #333;
+  }
+  
