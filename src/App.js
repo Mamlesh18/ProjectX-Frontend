@@ -1,65 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import io from 'socket.io-client';
-
-const socket = io('https://socket-io-1-mrda.onrender.com', {
-  transports: ['websocket'], 
-});
-
-const ChatRoom = () => {
-  const [message, setMessage] = useState('');
-  const [messages, setMessages] = useState([]);
-  const [room, setRoom] = useState('');
-  const [username, setUsername] = useState('');
-
-  useEffect(() => {
-    socket.on('message', (msg) => {
-      setMessages((prevMessages) => [...prevMessages, msg]);
-    });
-  }, []);
-
-  const joinRoom = () => {
-    socket.emit('join', { username, room });
-  };
-
-  const sendMessage = () => {
-    socket.emit('message', { sender: username, message });
-    setMessages((prevMessages) => [...prevMessages, message]);
-    setMessage('');
-  };
-
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import UserDashboard from "./components/student/UserDashboard";
+import ProjectList from "./components/client/ProjectList";
+import ProjectUpload from "./components/client/Projectupload";
+import LoginPage from "./components/auth/Loginpage";
+function App() {
   return (
-    <div>
+    <Router>
       <div>
-        <input
-          type="text"
-          placeholder="Enter username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Enter room"
-          value={room}
-          onChange={(e) => setRoom(e.target.value)}
-        />
-        <button onClick={joinRoom}>Join Room</button>
-      </div>
-      <div>
-        <div>
-          {messages.map((msg, index) => (
-            <p key={index}>{msg}</p>
-          ))}
-        </div>
-        <input
-          type="text"
-          placeholder="Enter message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
-        <button onClick={sendMessage}>Send</button>
-      </div>
-    </div>
-  );
-};
+        <Routes>
+          <Route path="/" element={<UserDashboard />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/project" element={<ProjectList />} />
+          <Route path="/pro" element={<ProjectUpload />} />
 
-export default ChatRoom;
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+export default App;

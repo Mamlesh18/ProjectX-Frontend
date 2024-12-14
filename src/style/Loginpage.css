@@ -1,0 +1,10 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../assets/WhatsApp\ Image\ 2024-12-13\ at\ 22.09.24.jpeg');  /* Corrected image path */
+    background-size: cover;
+    background-position: center;
+  }
+  
