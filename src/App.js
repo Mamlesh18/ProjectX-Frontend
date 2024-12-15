@@ -17,6 +17,8 @@ function App() {
           <Route path="/project" element={<ProjectList />} />
           <Route path="/pro" element={<ProjectUpload />} />
           <Route path="/signup" element={<OTPVerification />} />
+          <Route path="/signup" element={<OTPVerification />} />
+
           <Route path="/studentfrom" element={<StudentForm />} />
           <Route path="/homepage" element={<HomePage />} />
         </Routes>
